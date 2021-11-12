@@ -12,10 +12,22 @@ const TaskProvider = ({ children }) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
+  const updateStatus = (id) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id === id) {
+        task.status = !task.status;
+      }
+      return task;
+    }
+    );
+    setTasks(newTasks);
+  };
+
   const contextValue = {
     tasks,
     addTask,
     removeTask,
+    updateStatus,
   };
 
   return <TaskContext.Provider value={contextValue}>{children}</TaskContext.Provider>;

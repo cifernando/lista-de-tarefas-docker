@@ -4,6 +4,7 @@ Essa é um projeto que teve como objetivo entender como o docker funciona e como
 
 Aqui tem um exemplo em imagem da aplicação:
 
+![Captura de tela de 2021-11-12 19-57-08](https://user-images.githubusercontent.com/84880811/141588299-c765c4bb-b28f-4fdf-a76b-aa49033d77d7.png)
 
 
 # Aprendizados
@@ -33,7 +34,8 @@ Neste projeto fui capaz de:
   * `git clone git@github.com:cifernando/lista-de-tarefas-docker.git`
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd lista-de-tarefas-docker`
-# Para essas instruções é necessário ter o docker e o docker-compose instalado e configurado no seu computador.
+
+### Para essas instruções é necessário ter o docker e o docker-compose instalado e configurado no seu computador.
 
 2. Rodar o arquivo docker-compose
   * `docker-compose up`
@@ -41,7 +43,7 @@ Neste projeto fui capaz de:
   * Acessar a aplicação:
     * `http://localhost:8080`
 
-# Caso queira rodar o projeto com o React
+### Caso queira rodar o projeto com o React
 
 1. Instale as dependências e inicialize o projeto
   * Instale as dependências:

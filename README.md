@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Boas vindas ao repositório do projeto Lista de Tarefas Docker!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Essa é um projeto que teve como objetivo entender como o docker funciona e como fazer o Deploy de uma aplicação utilizando o mesmo, além disso treinei o uso do context API do react fazendo uma aplicação de lista de tarefas.
 
-## Available Scripts
+Aqui tem um exemplo em imagem da aplicação:
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Aprendizados
+Neste projeto fui capaz de:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  * Criar um arquivo responsável por subir um container com o nome docker-compose
 
-### `yarn test`
+  * Utilizar um arquivo Dockerfile para fazer o build da aplicação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  * Entender o conceito dos container e imagens em docker
 
-### `yarn build`
+  * Utilizar o NGINX para permitir o acesso através da porta 80 direcionando para a porta do container;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  * Criar uma lista de tarefas que pode ser reordenada arrastando e soltando com a biblioteca beautiful dnd
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  * Criar um contexto em React através do Context API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### STATUS DO PROJETO: Finalizado
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Instruções para abrir o projeto no seu computador e rodar o arquivo docker-compose
 
-## Learn More
+1. Clone o repositório
+  * `git clone git@github.com:cifernando/lista-de-tarefas-docker.git`
+  * Entre na pasta do repositório que você acabou de clonar:
+    * `cd lista-de-tarefas-docker`
+# Para essas instruções é necessário ter o docker e o docker-compose instalado e configurado no seu computador.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Rodar o arquivo docker-compose
+  * `docker-compose up`
+  * O docker-compose irá rodar o container do nome lista-de-tarefas-docker e o nome do container será lista-de-tarefas-docker.
+  * Acessar a aplicação:
+    * `http://localhost:8080`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Caso queira rodar o projeto com o React
 
-### Code Splitting
+1. Instale as dependências e inicialize o projeto
+  * Instale as dependências:
+    * `npm install`
+  * Inicialize o projeto:
+    * `npm start` (uma nova página deve abrir no seu navegador)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Tecnologias utilizadas no projeto
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Docker
+2. Docker-compose
+3. React
+4. beautiful-dnd
+5. Context API
+6. NGINX

@@ -51,14 +51,14 @@ const ToDoTable = () => {
                               ref={provided.innerRef}
                               {...provided.draggableProps}
                               {...provided.dragHandleProps}
-                              className="hover:bg-gray-100 bg-white rounded-md border-2 shadow-sm"
+                              onDoubleClick={() => updateStatus(task.id)}
+                              className="hover:bg-gray-100bg-white rounded-md border-2 shadow-sm cursor-pointer"
                             >
                               <td className="px-6 py-4 whitespace-nowrap">
                                 <h1
                                   className={`${
                                     task.status === true ? "" : "line-through"
                                   } text-md text-gray-900 cursor-pointer select-none`}
-                                  onDoubleClick={() => updateStatus(task.id)}
                                 >
                                   {task.title}
                                 </h1>
@@ -67,13 +67,13 @@ const ToDoTable = () => {
                                 <span
                                   className={`px-2 inline-flex select-none text-xs leading-5 font-semibold rounded-full ${
                                     task.status === true
-                                      ? "bg-green-100 text-green-800"
-                                      : "bg-red-100 text-red-800"
+                                      ? "bg-red-100 text-red-800"
+                                      : "bg-green-100 text-green-800"
                                   }`}
                                 >
                                   {task.status === true
-                                    ? "Feita"
-                                    : "Em andamento"}
+                                    ? "Em andamento"
+                                    : "Feita"}
                                 </span>
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

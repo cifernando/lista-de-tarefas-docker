@@ -3,7 +3,7 @@ import TaskContext from "./TaskContext";
 
 const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
-  
+
   const addTask = (task) => {
     setTasks([...tasks, task]);
   };
@@ -18,9 +18,21 @@ const TaskProvider = ({ children }) => {
         task.status = !task.status;
       }
       return task;
-    }
-    );
+    });
     setTasks(newTasks);
+  };
+
+  const handleOnDragEnd = (result) => {
+    const { destination, source, draggableId } = result;
+
+    const reorderedTasks = [...tasks];
+    const draggedTask = tasks.find(({ taskId }) => taskId === draggableId);
+
+    if (draggedTask) {
+      reorderedTasks.splice(source.index, 1);
+      reorderedTasks.splice(destination.index, 0, draggedTask);
+      setTasks(reorderedTasks);
+    }
   };
 
   const contextValue = {
@@ -28,9 +40,12 @@ const TaskProvider = ({ children }) => {
     addTask,
     removeTask,
     updateStatus,
+    handleOnDragEnd,
   };
 
-  return <TaskContext.Provider value={contextValue}>{children}</TaskContext.Provider>;
+  return (
+    <TaskContext.Provider value={contextValue}>{children}</TaskContext.Provider>
+  );
 };
 
 export default TaskProvider;

@@ -12,7 +12,7 @@ const TaskForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const newTaskObject = {
-      id: Date.now(),
+      id: Date.now().toString(),
       title: newTask,
       status: true,
     };

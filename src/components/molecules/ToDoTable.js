@@ -42,7 +42,7 @@ const ToDoTable = () => {
                     >
                       {tasks.map((task, index) => (
                         <Draggable
-                          key={index}
+                          key={task.id}
                           draggableId={task.id}
                           index={index}
                         >

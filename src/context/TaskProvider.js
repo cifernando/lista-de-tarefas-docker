@@ -2,14 +2,21 @@ import React, { useState } from "react";
 import TaskContext from "./TaskContext";
 
 const TaskProvider = ({ children }) => {
-  const [tasks, setTasks] = useState([]);
+  const localStorageTasks = JSON.parse(localStorage.getItem("tasks"));
+
+  const [tasks, setTasks] = useState(localStorageTasks || []);
+
+  const saveTasks = (tasks) => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    setTasks(tasks);
+  };
 
   const addTask = (task) => {
-    setTasks([...tasks, task]);
+    saveTasks([...tasks, task]);
   };
 
   const removeTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+    saveTasks(tasks.filter((task) => task.id !== id));
   };
 
   const updateStatus = (id) => {
@@ -19,19 +26,24 @@ const TaskProvider = ({ children }) => {
       }
       return task;
     });
-    setTasks(newTasks);
+    saveTasks(newTasks);
   };
 
   const handleOnDragEnd = (result) => {
     const { destination, source, draggableId } = result;
 
+    if (!destination) return;
+    if (!destination.droppableId === source.droppableId && destination.index === source.index) {
+      return;
+    }
+
     const reorderedTasks = [...tasks];
-    const draggedTask = tasks.find(({ taskId }) => taskId === draggableId);
+    const draggedTask = tasks.find(({ id }) => id === draggableId);
 
     if (draggedTask) {
       reorderedTasks.splice(source.index, 1);
       reorderedTasks.splice(destination.index, 0, draggedTask);
-      setTasks(reorderedTasks);
+      saveTasks(reorderedTasks);
     }
   };
 

@@ -39,7 +39,6 @@ Neste projeto fui capaz de:
 
 2. Rodar o arquivo docker-compose
   * `docker-compose up`
-  * O docker-compose irá rodar o container do nome lista-de-tarefas-docker e o nome do container será lista-de-tarefas-docker.
   * Acessar a aplicação:
     * `http://localhost:8080`
 

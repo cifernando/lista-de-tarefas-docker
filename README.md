@@ -2,6 +2,8 @@
 
 Essa é um projeto que teve como objetivo entender como o docker funciona e como fazer o Deploy de uma aplicação utilizando o mesmo, além disso treinei o uso do context API do react fazendo uma aplicação de lista de tarefas.
 
+Link para aplicação: https://lista-de-tarefas-two.vercel.app/
+
 Aqui tem um exemplo em imagem da aplicação:
 
 ![Captura de tela de 2021-11-12 19-57-08](https://user-images.githubusercontent.com/84880811/141588299-c765c4bb-b28f-4fdf-a76b-aa49033d77d7.png)
